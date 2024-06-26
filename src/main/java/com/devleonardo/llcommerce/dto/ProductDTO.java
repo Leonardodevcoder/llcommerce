@@ -10,8 +10,6 @@ public class ProductDTO {
     private Double price;
     private String imgUrl;
 
-    public ProductDTO() {}
-
     public ProductDTO(Long id, String name, String description, Double price, String imgUrl) {
         this.id = id;
         this.name = name;
@@ -32,19 +30,19 @@ public class ProductDTO {
         return id;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    public Double getPrice() {
-        return price;
+    public String getName() {
+        return name;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public String getName() {
-        return name;
+    public Double getPrice() {
+        return price;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
     }
 }

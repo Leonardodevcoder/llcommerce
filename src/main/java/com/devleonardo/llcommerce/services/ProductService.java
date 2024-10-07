@@ -1,6 +1,7 @@
 package com.devleonardo.llcommerce.services;
 
 import com.devleonardo.llcommerce.dto.ProductDTO;
+import com.devleonardo.llcommerce.dto.ProductMinDTO;
 import com.devleonardo.llcommerce.entities.Product;
 import com.devleonardo.llcommerce.exceptions.DataBaseException;
 import com.devleonardo.llcommerce.exceptions.ResourceNotFoundException;
@@ -28,9 +29,9 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public Page<ProductDTO> findAll(String name, Pageable pageable) {
+    public Page<ProductMinDTO> findAll(String name, Pageable pageable) {
         Page<Product> result = repository.seachByName(name, pageable);
-        return result.map(ProductDTO::new);
+        return result.map(ProductMinDTO::new);
     }
 
     @Transactional
